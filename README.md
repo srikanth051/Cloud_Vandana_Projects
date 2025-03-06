@@ -46,10 +46,6 @@ This repository contains my solutions for the **Associate Software Engineer Assi
   - Includes "Next" and "Previous" buttons for navigation.
   - Uses an **array of image URLs** to load different images dynamically.
 
-## Deployment & Submission
-- The working code has been deployed to **GitHub**.
-- **Repository Link:** [GitHub Repository URL] *(Replace with actual link)*
-- **Submission Email:** Sent to `careers@cloudvandana.com`.
 
 ## Technologies Used
 - **HTML, CSS** (for Profile Card & To-Do List UI)
