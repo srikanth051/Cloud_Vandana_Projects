@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .slider {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        .slider img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .slider img.active {
+            display: block;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img id="slide" class="active" src="" alt="Slider Image">
+        <div class="buttons">
+            <button onclick="prevImage()">&#10094; Prev</button>
+            <button onclick="nextImage()">Next &#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            "https://www.worldatlas.com/r/w1200/upload/51/07/4e/shutterstock-250781869.jpg",
+    "https://th.bing.com/th/id/OIP.cn1M_lEOyHcog6_Vpvg-0QHaEr?rs=1&pid=ImgDetMain",
+    "https://external-preview.redd.it/_Ovr4t7oQ3skNLu49EKanXFbMCgLHuRUwwrf4JTRJ0g.jpg?auto=webp&s=ad00a0e1c5b5130b2dc675fe2512c033a36fd607",
+    "https://wallpaperaccess.com/full/2150468.jpg",
+    "https://th.bing.com/th/id/OIP.fBWFwFSN2h_VcQLnSfeovgHaIE?w=1376&h=1500&rs=1&pid=ImgDetMain"
+        ];
+
+        let currentIndex = 0;
+        const slide = document.getElementById("slide");
+
+        function showImage(index) {
+            slide.src = images[index];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            showImage(currentIndex);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            showImage(currentIndex);
+        }
+
+        showImage(currentIndex);
+    </script>
+</body>
+</html>
